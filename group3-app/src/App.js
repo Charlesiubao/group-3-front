@@ -9,6 +9,7 @@ import MyCart from './pages/MyCart';
 import AllProducts from './pages/AllProducts';
 import {useContext} from 'react'
 import {UserContext} from './context/UserContext'
+import SingleProduct from './pages/Singleproduct';
 
 function App() {
   const { userState, fetchUser } = useContext(UserContext)
@@ -40,7 +41,7 @@ function App() {
           }
         }}
       /> 
-      <Route path="/allproducts" exact
+      <Route path="/products" exact
         render={() => {
           return <AllProducts />
         }}
@@ -54,7 +55,14 @@ function App() {
         render={() => {
           return <MyCart />
         }}
-      />       
+      />  
+      <Route
+        path="/products/:id"
+        exact
+        render={(routingInfo) => {
+          return <SingleProduct id={routingInfo.match.params.id} />
+        }}
+      />     
     </div>
   );
 }

@@ -27,7 +27,7 @@ const Navbar = () => {
                 {localStorage.getItem('userId') ? 
                 <span>  
                 <span className="navLinks">
-                <Link to="/allproducts">All Products</Link>{' | '}
+                <Link to="/products">All Products</Link>{' | '}
                 </span>               
                 <span className="navLinks">
                 <Link to="/myorders">My Orders</Link>{' | '}
