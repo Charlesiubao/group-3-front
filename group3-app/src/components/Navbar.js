@@ -1,6 +1,7 @@
 import {Link, useHistory} from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
     // const { userState } = useContext(UserContext)
@@ -14,7 +15,7 @@ const Navbar = () => {
     return (
         <div className="headerSection">
             <div className="logo">
-                <span className="homeTitle">Logo</span>
+                <span className="homeTitle"><img src={logo} alt='grow' /></span>
             </div>
             
             <div>
