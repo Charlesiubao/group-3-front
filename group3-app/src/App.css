@@ -4,6 +4,22 @@
   text-align: center;
 }
 
-/* .logo {
-  float: left;
-} */
+.signupPage, .loginPage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.loginForm, .signupForm {
+  margin: 1% auto;
+  width: 10em;
+  text-align: center;
+  position: relative;
+  -webkit-animation: moveDown .3s;
+  -moz-animation: moveDown .3s;
+  animation: moveDown .3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
