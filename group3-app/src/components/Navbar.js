@@ -24,15 +24,15 @@ const Navbar = () => {
             <Link to="/">Home</Link>
             </span>
             <span className="navLinks">
-                <Link to=" ">All Products</Link>
+                <Link to="/allproducts">All Products</Link>
                 </span>   
             <span>
                 
                 <span className="navLinks">
-                <Link to=" ">My Orders</Link>
+                <Link to="/myorders">My Orders</Link>
                 </span>
                 <span className="navLinks">
-                <Link to=" ">My Cart</Link>
+                <Link to="/mycart">My Cart</Link>
                 </span>
                 <span className="navLinks">
                 <Link to=" " onClick ={(e) => {
