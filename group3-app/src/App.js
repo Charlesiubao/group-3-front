@@ -7,8 +7,13 @@ import {Route, Redirect} from 'react-router-dom'
 import MyOrders from './pages/MyOrders';
 import MyCart from './pages/MyCart';
 import AllProducts from './pages/AllProducts';
+import {useContext} from 'react'
+import {UserContext} from './context/UserContext'
 
 function App() {
+  const { userState, fetchUser } = useContext(UserContext)
+  const [user, setUser] = userState
+
   return (
     <div className="App">
       <Navbar/>
@@ -19,12 +24,20 @@ function App() {
       />
       <Route path="/signup" exact
         render={() => {
-          return <Signup />
+          if (user.id) {
+            return <Redirect to="/" exact />
+          } else {
+            return <Signup />
+          }
         }}
       />  
       <Route path="/login" exact
         render={() => {
-          return <Login />
+          if (user.id) {
+            return <Redirect to="/" exact />
+          } else {
+            return <Login />
+          }
         }}
       /> 
       <Route path="/allproducts" exact
