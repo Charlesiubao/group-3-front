@@ -24,11 +24,11 @@ const Navbar = () => {
             <span className="navLinks">
             <Link to="/">Home</Link>{' | '}
             </span>
-            <span className="navLinks">
+                {localStorage.getItem('userId') ? 
+                <span>  
+                <span className="navLinks">
                 <Link to="/allproducts">All Products</Link>{' | '}
-                </span> 
-                {localStorage.getItem('userId') ?   
-                <span>                
+                </span>               
                 <span className="navLinks">
                 <Link to="/myorders">My Orders</Link>{' | '}
                 </span>
