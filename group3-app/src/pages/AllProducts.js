@@ -1,7 +1,9 @@
+import ProductsList from "../components/ProductsList"
+
 const AllProducts = () => {
     return (
         <div>
-            All Products Page
+           <ProductsList route="/products"/>
         </div>
     )
 }
