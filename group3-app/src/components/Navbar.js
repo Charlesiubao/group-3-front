@@ -22,18 +22,18 @@ const Navbar = () => {
             <nav className="navbar">
            
             <span className="navLinks">
-            <Link to="/">Home</Link>
+            <Link to="/">Home</Link>{' | '}
             </span>
             <span className="navLinks">
-                <Link to="/allproducts">All Products</Link>
+                <Link to="/allproducts">All Products</Link>{' | '}
                 </span>   
             <span>
                 
                 <span className="navLinks">
-                <Link to="/myorders">My Orders</Link>
+                <Link to="/myorders">My Orders</Link>{' | '}
                 </span>
                 <span className="navLinks">
-                <Link to="/mycart">My Cart</Link>
+                <Link to="/mycart">My Cart</Link>{' | '}
                 </span>
                 <span className="navLinks">
                 <Link to=" " onClick ={(e) => {
@@ -41,12 +41,12 @@ const Navbar = () => {
                     // localStorage.removeItem('userId')
                     // setUser({})
                     // returnHome()
-                }}>Logout</Link>
+                }}>Logout</Link>{' | '}
                 </span>
             </span>       
             <span>
                 <span className="navLinks">
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup">Sign Up</Link>{' | '}
                 </span>
                 <span className="navLinks">
                 <Link to="/login">Login</Link>
