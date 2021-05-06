@@ -4,6 +4,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import {Route, Redirect} from 'react-router-dom'
+import MyOrders from './pages/MyOrders';
+import MyCart from './pages/MyCart';
+import AllProducts from './pages/AllProducts';
 
 function App() {
   return (
@@ -24,6 +27,21 @@ function App() {
           return <Login />
         }}
       /> 
+      <Route path="/allproducts" exact
+        render={() => {
+          return <AllProducts />
+        }}
+      /> 
+      <Route path="/myorders" exact
+        render={() => {
+          return <MyOrders />
+        }}
+      /> 
+      <Route path="/mycart" exact
+        render={() => {
+          return <MyCart />
+        }}
+      />       
     </div>
   );
 }
