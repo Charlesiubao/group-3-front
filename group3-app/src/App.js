@@ -74,13 +74,14 @@ function App() {
           return <Checkout />
         }}
       />  
-        <Route
+        {/* <Route
         path="/myorders/:id"
         exact
         render={() => {
           return <SingleOrder />
         }}
-      />  
+      />   */}
+      <Route path="/myorders/:id" exact component={SingleOrder}/>
       </Switch>
    
     </div>

@@ -29,9 +29,11 @@ const OrdersList = (props) => {
       {
         allOrders.length ? 
         allOrders.map((order) => {
-          return <div className="singleOrder">
+          return <div key={order.id} className="singleOrder">
             <span key={order.id}>
-              <div><Link to={`/myorders/${order.id}`}>{order.createdAt}</Link></div>
+              {/* <div><Link to={`/myorders/${order.id}`}>{order.createdAt}</Link></div> */}
+
+              <div><Link  to={{pathname: `/myorders/${order.id}`, state: {orderId:order.id}}}>{order.createdAt}</Link></div>
             </span>
           </div>
 
