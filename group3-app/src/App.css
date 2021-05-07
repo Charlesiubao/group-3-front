@@ -23,3 +23,21 @@
   animation-fill-mode: forwards;
 }
 
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  margin: 2% auto;
+
+}
+.singleProduct {
+  display: flex;
+  flex-direction: column;
+  margin: .5% auto;
+  /* max-height: 50px; */
+}
+
+.thumbnail {
+  width: 10%;
+}
