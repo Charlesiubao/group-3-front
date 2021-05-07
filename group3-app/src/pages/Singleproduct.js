@@ -46,11 +46,11 @@ const SingleProduct = (props) => {
 
             <div className="singleProductContainer">
             <h2>{product.name}</h2>
-            <img src={product.image}/>
+            <img className='image' src={product.image}/>
             <p>{product.description}</p>
             <span>{product.price}</span>
-            <button onClick={addToCart}>Add To Cart</button>
-            <Link to={'/products'}><button>Back to All Products</button></Link >
+            <div><button onClick={addToCart}>Add To Cart</button>
+            <Link to={'/products'}><button>Back to All Products</button></Link ></div>
             </div>
         </div>
     )

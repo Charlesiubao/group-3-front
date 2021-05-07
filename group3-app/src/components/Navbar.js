@@ -2,6 +2,7 @@ import {Link, useHistory} from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import logo from '../assets/logo.png'
+import cart from '../assets/shopping-cart.png'
 
 const Navbar = () => {
     const { userState } = useContext(UserContext)
@@ -20,7 +21,7 @@ const Navbar = () => {
             
             <div>
             <nav className="navbar">
-           
+          
             <span className="navLinks">
             <Link to="/">Home</Link>{' | '}
             </span>
@@ -32,16 +33,17 @@ const Navbar = () => {
                 <span className="navLinks">
                 <Link to="/myorders">My Orders</Link>{' | '}
                 </span>
-                <span className="navLinks">
-                <Link to="/mycart">My Cart</Link>{' | '}
-                </span>
+                
                 <span className="navLinks">
                 <Link to=" " onClick ={(e) => {
                     e.preventDefault()
                     localStorage.removeItem('userId')
                     setUser({})
                     returnHome()
-                }}>Logout</Link>
+                }}>Logout</Link>{' | '}
+                </span>
+                <span className="navLinks">
+                <Link to="/mycart"><img className='cart' src={cart}/></Link>
                 </span>
             </span> 
             :      
