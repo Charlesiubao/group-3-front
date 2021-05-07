@@ -26,6 +26,20 @@ const SingleProduct = (props) => {
     useEffect(fetchSingleProduct, [])
     useEffect(fetchSingleProduct, [shouldReload])
 
+    const addToCart = (e) => {
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/cart`, {
+            productId: product.id
+        },
+            {headers: { 
+                    Authorization: localStorage.getItem('userId')
+                }
+          })
+        .then((response) => {
+            console.log(response)
+            console.log('added to cart')
+        })
+       }
+
     return (
         <div>
           { shouldRedirect && <Redirect to={shouldRedirect} /> }
@@ -35,7 +49,8 @@ const SingleProduct = (props) => {
             <img src={product.image}/>
             <p>{product.description}</p>
             <span>{product.price}</span>
-            <button>Add To Cart</button>
+            <button onClick={addToCart}>Add To Cart</button>
+            <Link to={'/products'}><button>Back to All Products</button></Link >
             </div>
         </div>
     )

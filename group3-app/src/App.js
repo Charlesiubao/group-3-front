@@ -10,6 +10,7 @@ import AllProducts from './pages/AllProducts';
 import {useContext} from 'react'
 import {UserContext} from './context/UserContext'
 import SingleProduct from './pages/Singleproduct';
+import {Switch} from 'react-router-dom'
 
 function App() {
   const { userState, fetchUser } = useContext(UserContext)
@@ -18,7 +19,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Route path="/" exact
+      <Switch>
+              <Route path="/" exact
         render={() => {
           return <Home />
         }}
@@ -62,7 +64,9 @@ function App() {
         render={(routingInfo) => {
           return <SingleProduct id={routingInfo.match.params.id} />
         }}
-      />     
+      />  
+      </Switch>
+   
     </div>
   );
 }
