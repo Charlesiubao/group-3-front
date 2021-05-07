@@ -11,6 +11,7 @@ import {useContext} from 'react'
 import {UserContext} from './context/UserContext'
 import SingleProduct from './pages/Singleproduct';
 import {Switch} from 'react-router-dom'
+import Checkout from './pages/Checkout';
 
 function App() {
   const { userState, fetchUser } = useContext(UserContext)
@@ -63,6 +64,13 @@ function App() {
         exact
         render={(routingInfo) => {
           return <SingleProduct id={routingInfo.match.params.id} />
+        }}
+      />  
+        <Route
+        path="/mycart/checkout"
+        exact
+        render={() => {
+          return <Checkout />
         }}
       />  
       </Switch>

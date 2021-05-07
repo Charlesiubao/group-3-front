@@ -8,6 +8,7 @@ const MyCart = (props) => {
     const [user, setUser] = userState
     const [cartItems, setCartItems] = useState([])
     const [shouldReload, setShouldReload] = useState(true)
+    const [cartTotal, setCartTotal] = useState(0);
 
     const fetchAllCartItems = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/cart`, {
@@ -24,6 +25,20 @@ const MyCart = (props) => {
       useEffect(fetchAllCartItems, [])
       useEffect(fetchAllCartItems, [shouldReload])
 
+
+    
+      const total = () => {
+        let totalVal = 0;
+        for (let i = 0; i < cartItems.length; i++) {
+          totalVal += parseInt(cartItems[i].price.replace('$', ''))
+
+        }
+        setCartTotal(totalVal);
+      };
+
+      useEffect(() => {
+        total();
+      }, [cartItems]);
 
     return (
         <div className="myCartList">
@@ -53,8 +68,8 @@ const MyCart = (props) => {
           :
           <p>You haven't added any items into your cart...</p>
         }
-                <p>Total price: $_____</p>
-                <button>Check out</button>
+                <p>Total price:${cartTotal}</p>
+                <Link to={`/mycart/checkout`}><button>Check out</button></Link>
       </div>
     )
 }
