@@ -6,7 +6,7 @@ const Home = () => {
             <h1>Welcome to our store</h1>
             </div>
             <div className="homeBodySection">
-                Image?
+             GROW is your home for classic & modern plants of all kinds. Shop now!
             </div>
             </div>
 

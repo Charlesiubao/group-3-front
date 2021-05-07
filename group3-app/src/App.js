@@ -12,6 +12,7 @@ import {UserContext} from './context/UserContext'
 import SingleProduct from './pages/Singleproduct';
 import {Switch} from 'react-router-dom'
 import Checkout from './pages/Checkout';
+import SingleOrder from './pages/SingleOrder';
 
 function App() {
   const { userState, fetchUser } = useContext(UserContext)
@@ -71,6 +72,13 @@ function App() {
         exact
         render={() => {
           return <Checkout />
+        }}
+      />  
+        <Route
+        path="/myorders/:id"
+        exact
+        render={() => {
+          return <SingleOrder />
         }}
       />  
       </Switch>
