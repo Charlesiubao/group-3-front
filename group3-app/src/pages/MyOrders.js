@@ -1,7 +1,9 @@
+import OrdersList from "../components/OrdersList"
+
 const MyOrders = () => {
     return (
         <div>
-            My Orders Page
+            <OrdersList route="/orders"/>
         </div>
     )
 }
