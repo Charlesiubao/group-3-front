@@ -23,7 +23,7 @@ const CheckoutForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/`, order,{
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/orders`, order,{
           headers: {
             Authorization: localStorage.getItem('userId')
           }

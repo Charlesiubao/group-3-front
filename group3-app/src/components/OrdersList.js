@@ -17,11 +17,13 @@ const OrdersList = (props) => {
         }
       })
     .then((response) => {
-      setAllOrders(response.data)
+        console.log(response.data)
+      setAllOrders(response.data.order)
     })
   }
   useEffect(fetchAllOrders, [])
-  
+
+
   return (
     <div className="ordersList">
       {
@@ -29,7 +31,7 @@ const OrdersList = (props) => {
         allOrders.map((order) => {
           return <div className="singleOrder">
             <span key={order.id}>
-              <div><Link to={`/myorders/${order.id}`}>{order.id}</Link></div>
+              <div><Link to={`/myorders/${order.id}`}>{order.createdAt}</Link></div>
             </span>
           </div>
 
