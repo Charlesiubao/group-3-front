@@ -54,8 +54,8 @@ function App() {
         }}
       /> 
       <Route path="/mycart" exact
-        render={() => {
-          return <MyCart />
+        render={(routingInfo) => {
+          return <MyCart id={routingInfo.match.params.id}/>
         }}
       />  
       <Route
