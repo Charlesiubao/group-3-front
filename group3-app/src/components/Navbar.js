@@ -41,7 +41,7 @@ const Navbar = () => {
                     localStorage.removeItem('userId')
                     setUser({})
                     returnHome()
-                }}>Logout</Link>{' | '}
+                }}>Logout</Link>
                 </span>
             </span> 
             :      
