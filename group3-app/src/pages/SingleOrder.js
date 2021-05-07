@@ -11,34 +11,47 @@ const SingleOrder= (props) => {
     const [shouldReload, setShouldReload] = useState(true)
     const [cartTotal, setCartTotal] = useState(0);
 
-    const fetchSingleOrder = () => {
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}/orders/1`,{
+    const fetchSingleOrder = async () => {
+      console.log(props.location.state.orderId)
+
+       let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/orders/${props.location.state.orderId}`,{
             headers: {
               Authorization: localStorage.getItem('userId')
             }
           })
-        .then((response) => {
-        console.log(response.data)
+        //.then((response) => {
+          console.log('RESPONSE')
+        console.log(response)
          setOrders(response.data) 
          setShouldReload(false)
-        })
+   
+        //})
        }
       
-    useEffect(fetchSingleOrder, [])
-    useEffect(fetchSingleOrder, [shouldReload])
+    useEffect(() => {
+      fetchSingleOrder();
+ 
+    }, [])
+    //useEffect(fetchSingleOrder, [shouldReload])
 
+  
     const total = () => {
         let totalVal = 0;
-        for (let i = 0; i < orders.products.length; i++) {
-          totalVal += parseInt(orders.products[i].price.replace('$', ''))
+        console.log('PRODUCTS')
+        console.log(orders.products)
+        if(orders.products){
+          for (let i = 0; i < orders.products.length; i++) {
+            totalVal += parseInt(orders.products[i].price.replace('$', ''))
 
+          }
         }
+
         setCartTotal(totalVal);
       };
 
       useEffect(() => {
         total();
-      }, [orders.products]);
+      }, [orders]);
 
     return (
         <div>
